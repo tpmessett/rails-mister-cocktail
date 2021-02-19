@@ -6,7 +6,7 @@
         <div class="row g-0">
           <div class="col-md-4">
             <%= link_to cocktail_path(cocktail) do %>
-              <img src="https://source.unsplash.com/random?cocktail">
+              <%= image_tag "https://source.unsplash.com/random?#{cocktail.name}"%>
             <% end %>
           </div>
           <div class="col-md-8">
