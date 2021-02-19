@@ -4,9 +4,13 @@
     <div class="col-xs-12 col-sm-6">
       <div class="card mb-3" style="max-width: 540px;">
         <div class="row g-0">
-          <div class="col-md-4">
+          <div class="d-flex flex-wrap align-items-center col-md-4">
             <%= link_to cocktail_path(cocktail) do %>
-              <%= image_tag "https://source.unsplash.com/random?#{cocktail.name}"%>
+              <% if cocktail.photo.attached? %>
+                <%= cl_image_tag cocktail.photo.key %>
+              <% else %>
+                <%= cl_image_tag("Screenshot_2021-02-19_at_12.50.34_tmvn3c.png") %>
+              <% end %>
             <% end %>
           </div>
           <div class="col-md-8">
