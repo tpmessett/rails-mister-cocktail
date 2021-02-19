@@ -11,3 +11,35 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.logo {
+  color: white;
+  font-size: 32px;
+}
+
+#nav {
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.menu-item {
+    color: white;
+  }
+
+.button {
+  border-radius: 2px
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-image: url("../images/bar1.jpg")
+}

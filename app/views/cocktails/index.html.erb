@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+  <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-6">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <%= link_to cocktail_path(cocktail) do %>
+              <img src="https://source.unsplash.com/random?cocktail">
+            <% end %>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><%= cocktail.name %></h5>
+              <%= link_to cocktail_path(cocktail) do %>
+              <p><button type="button" class="btn btn-outline-dark">Make this cocktail</button></p>
+              <% end %>
+
+              <p class="card-text"><small class="text-muted"><%= "This #{cocktail.name} recipe was last updated in #{cocktail.updated_at.strftime("%B %Y")}" %></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
