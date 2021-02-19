@@ -29,6 +29,12 @@ class CocktailsController < ApplicationController
     find_cocktail
   end
 
+  def update
+    find_cocktail
+    @cocktail.update(cocktail_params)
+    redirect_to cocktail_path(@cocktail)
+  end
+
   private
 
   def cocktail_params
