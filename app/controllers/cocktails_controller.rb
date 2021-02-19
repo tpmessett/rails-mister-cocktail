@@ -25,6 +25,10 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def edit
+    find_cocktail
+  end
+
   private
 
   def cocktail_params

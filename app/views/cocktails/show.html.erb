@@ -7,7 +7,7 @@
             <% if @cocktail.description? %>
               <p><%= @cocktail.description %></p>
             <% else %>
-              <p>There is no description on how to make a <%= @cocktail.name %> yet. Would you like to add one?</p>
+              <p>There is no description on how to make a <%= @cocktail.name %> yet. Would you like to <%= link_to "add one", "/cocktails/#{@cocktail.id}/edit"%>?</p>
             <% end %>
             <p> To make a <%= @cocktail.name %> you will need:</p>
           </div>
@@ -29,7 +29,11 @@
       <% if @cocktail.photo.attached? %>
                 <%= cl_image_tag @cocktail.photo.key %>
               <% else %>
-                <%= cl_image_tag("Screenshot_2021-02-19_at_12.50.34_tmvn3c.png") %>
+                 <div class="card">
+                  <div class="card-body">
+                    <p>There is no photo of a <%= @cocktail.name %> yet. Would you like to <%= link_to "add one", "/cocktails/#{@cocktail.id}/edit"%>?</p>
+                  </div>
+                </div>
               <% end %>
     </div>
   </div>
